@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-coffee-50: #fdfaf9;
+  --color-coffee-100: #f9f2ef;
+  --color-coffee-200: #eeded7;
+  --color-coffee-300: #dec1b4;
+  --color-coffee-400: #c99c89;
+  --color-coffee-500: #b8816a;
+  --color-coffee-600: #a76d56;
+  --color-coffee-700: #8b5947;
+  --color-coffee-800: #6f4e37;
+  --color-coffee-900: #5c4130;
+  --color-coffee-950: #312119;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-zinc-900 transition-colors duration-300;
+  }
+  .dark body {
+    @apply bg-zinc-950 text-zinc-100;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+  .glass-card {
+    @apply bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-2xl;
+  }
+}
