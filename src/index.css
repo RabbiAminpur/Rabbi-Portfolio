@@ -20,10 +20,10 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white text-zinc-900 transition-colors duration-300;
+    @apply bg-white text-coffee-950 transition-colors duration-300;
   }
   .dark body {
-    @apply bg-zinc-950 text-zinc-100;
+    @apply bg-coffee-950 text-coffee-50;
   }
 }
 
@@ -32,6 +32,15 @@
     @apply py-20 px-6 md:px-12 lg:px-24;
   }
   .glass-card {
-    @apply bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md border border-zinc-200 dark:border-zinc-800 rounded-2xl;
+    @apply bg-white/80 dark:bg-coffee-900/40 backdrop-blur-md border border-coffee-200 dark:border-coffee-800 rounded-2xl shadow-sm;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-coffee-800 to-coffee-600 dark:from-coffee-400 dark:to-coffee-200;
+  }
+  .gradient-bg {
+    @apply bg-gradient-to-br from-coffee-50 via-white to-coffee-50 dark:from-coffee-950 dark:via-coffee-900 dark:to-coffee-950;
+  }
+  .gradient-button {
+    @apply bg-gradient-to-r from-coffee-800 to-coffee-700 hover:from-coffee-700 hover:to-coffee-800 text-white shadow-md transition-all duration-300;
   }
 }

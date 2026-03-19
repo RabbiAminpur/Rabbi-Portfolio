@@ -10,7 +10,7 @@ const skills = [
 
 export function AboutAndSkills() {
   return (
-    <section id="about" className="section-padding bg-zinc-50 dark:bg-zinc-900/50">
+    <section id="about" className="section-padding bg-coffee-50/50 dark:bg-coffee-950/50">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -19,7 +19,7 @@ export function AboutAndSkills() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl font-bold mb-8 tracking-tighter">My Story</h2>
-          <div className="space-y-6 text-zinc-600 dark:text-zinc-400 leading-relaxed">
+          <div className="space-y-6 text-zinc-700 dark:text-coffee-200 leading-relaxed">
             <p>
               Born and raised in Bangladesh, my journey took a transformative turn when I moved to Kuala Lumpur, Malaysia. 
               Starting as a barista and cashier at Pineyard Cafe, I discovered a passion for hospitality and the art of 
@@ -55,9 +55,9 @@ export function AboutAndSkills() {
                     </div>
                     <span className="font-bold">{skill.name}</span>
                   </div>
-                  <span className="text-sm font-bold text-zinc-500">{skill.level}%</span>
+                  <span className="text-sm font-bold text-coffee-500 dark:text-coffee-400">{skill.level}%</span>
                 </div>
-                <div className="h-2 bg-zinc-200 dark:bg-zinc-800 rounded-full overflow-hidden">
+                <div className="h-2 bg-coffee-100 dark:bg-coffee-800 rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}

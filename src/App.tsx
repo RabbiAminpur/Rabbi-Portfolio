@@ -3,71 +3,62 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { AboutAndSkills } from './components/AboutAndSkills';
-import { Experience } from './components/Experience';
-import { Projects } from './components/Projects';
-import { Contact } from './components/Contact';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { FixedFooter } from './components/FixedFooter';
+import { Home } from './components/sections/Home';
+import { AboutMe } from './components/sections/AboutMe';
+import { Experience } from './components/sections/Experience';
+import { Education } from './components/sections/Education';
+import { PersonalInfo } from './components/sections/PersonalInfo';
+import { ContactMe } from './components/sections/ContactMe';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from './hooks/useTheme';
 
 export default function App() {
+  const [activeSection, setActiveSection] = useState('home');
+  const { theme, toggleTheme } = useTheme();
+
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'home': return <Home />;
+      case 'about': return <AboutMe />;
+      case 'experience': return <Experience />;
+      case 'education': return <Education />;
+      case 'personal': return <PersonalInfo />;
+      case 'contact': return <ContactMe />;
+      default: return <Home />;
+    }
+  };
+
   return (
-    <AnimatePresence>
-      <div className="min-h-screen font-sans selection:bg-coffee-200 selection:text-coffee-900">
-        <Navbar />
-        
-        <main>
-          <Hero />
-          <AboutAndSkills />
-          <Experience />
-          <Projects />
-          
-          {/* Gallery Section - Life & Work */}
-          <section className="section-padding overflow-hidden">
-            <div className="max-w-7xl mx-auto">
-              <h2 className="text-4xl font-bold mb-16 tracking-tighter">Life & Work</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.05 }}
-                    className="aspect-square rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      src={`https://picsum.photos/seed/coffee-${i}/400/400`}
-                      alt="Gallery"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <Contact />
-        </main>
-
-        <footer className="py-12 px-6 border-t border-zinc-200 dark:border-zinc-800">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="text-center md:text-left">
-              <div className="font-bold text-xl tracking-tighter mb-2">Rabbi Hossain</div>
-              <p className="text-sm text-zinc-500">© 2026. All rights reserved.</p>
-            </div>
-            
-            <div className="flex items-center gap-8 text-sm font-medium text-zinc-500">
-              <a href="#" className="hover:text-coffee-800 transition-colors">Privacy</a>
-              <a href="#" className="hover:text-coffee-800 transition-colors">Terms</a>
-              <a href="mailto:Mrhrabby24@gmail.com" className="hover:text-coffee-800 transition-colors">Email</a>
-            </div>
-          </div>
-        </footer>
+    <div className="min-h-screen font-sans selection:bg-coffee-200 selection:text-coffee-900 bg-white dark:bg-coffee-950 transition-colors duration-300 pb-32">
+      {/* Theme Toggle */}
+      <div className="fixed top-6 right-6 z-50">
+        <button
+          onClick={toggleTheme}
+          className="p-3 rounded-2xl glass-card hover:scale-110 transition-transform text-coffee-800 dark:text-coffee-200"
+          aria-label="Toggle theme"
+        >
+          {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+        </button>
       </div>
-    </AnimatePresence>
+
+      <main className="relative">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeSection}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+          >
+            {renderSection()}
+          </motion.div>
+        </AnimatePresence>
+      </main>
+
+      <FixedFooter activeSection={activeSection} onSectionChange={setActiveSection} />
+    </div>
   );
 }

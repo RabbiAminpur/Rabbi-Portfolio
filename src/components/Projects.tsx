@@ -33,12 +33,12 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="section-padding bg-zinc-50 dark:bg-zinc-900/50">
+    <section id="projects" className="section-padding bg-coffee-50/50 dark:bg-coffee-950/50">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <h2 className="text-4xl font-bold tracking-tighter mb-4">Featured Projects</h2>
-            <p className="text-zinc-600 dark:text-zinc-400 max-w-md">
+            <p className="text-coffee-700 dark:text-coffee-200 max-w-md">
               Combining my passion for content creation and my growing interest in technology.
             </p>
           </div>
@@ -74,13 +74,13 @@ export function Projects() {
                   {project.category}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-6 flex-1">
+                <p className="text-coffee-700 dark:text-coffee-200 text-sm leading-relaxed mb-6 flex-1">
                   {project.description}
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map(tag => (
-                    <span key={tag} className="px-2 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800 text-[10px] font-bold uppercase tracking-wider">
+                    <span key={tag} className="px-2 py-1 rounded-md bg-coffee-100 dark:bg-coffee-900 text-[10px] font-bold uppercase tracking-wider">
                       {tag}
                     </span>
                   ))}

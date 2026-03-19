@@ -6,7 +6,7 @@ export function Contact() {
     <section id="contact" className="section-padding">
       <div className="max-w-7xl mx-auto">
         <div className="glass-card overflow-hidden grid lg:grid-cols-2">
-          <div className="p-12 lg:p-20 bg-zinc-900 text-white">
+          <div className="p-12 lg:p-20 bg-coffee-950 text-white">
             <h2 className="text-4xl font-bold tracking-tighter mb-8">Let's Connect</h2>
             <p className="text-zinc-400 mb-12 leading-relaxed">
               Whether you're looking for a skilled barista, a content collaborator, 
@@ -15,7 +15,7 @@ export function Contact() {
 
             <div className="space-y-8">
               <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-coffee-900 flex items-center justify-center">
                   <Mail size={24} />
                 </div>
                 <div>
@@ -25,7 +25,7 @@ export function Contact() {
               </div>
               
               <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-coffee-900 flex items-center justify-center">
                   <Phone size={24} />
                 </div>
                 <div>
@@ -35,7 +35,7 @@ export function Contact() {
               </div>
 
               <div className="flex items-center gap-6">
-                <div className="w-12 h-12 rounded-2xl bg-zinc-800 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-2xl bg-coffee-900 flex items-center justify-center">
                   <Facebook size={24} />
                 </div>
                 <div>
@@ -45,7 +45,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="mt-20 pt-12 border-t border-zinc-800 flex items-center gap-4">
+            <div className="mt-20 pt-12 border-t border-coffee-900 flex items-center gap-4">
               <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-sm font-bold text-zinc-400">Available for new opportunities</span>
             </div>
@@ -55,42 +55,42 @@ export function Contact() {
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest opacity-60">Full Name</label>
+                  <label className="text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-coffee-300">Full Name</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent focus:ring-2 focus:ring-coffee-800 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-coffee-800 bg-transparent focus:ring-2 focus:ring-coffee-800 outline-none transition-all text-coffee-950 dark:text-coffee-50"
                     placeholder="John Doe"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-widest opacity-60">Email Address</label>
+                  <label className="text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-coffee-300">Email Address</label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent focus:ring-2 focus:ring-coffee-800 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-coffee-800 bg-transparent focus:ring-2 focus:ring-coffee-800 outline-none transition-all text-coffee-950 dark:text-coffee-50"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
               
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest opacity-60">Subject</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-coffee-300">Subject</label>
                 <input
                   type="text"
-                  className="w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent focus:ring-2 focus:ring-coffee-800 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-coffee-800 bg-transparent focus:ring-2 focus:ring-coffee-800 outline-none transition-all text-coffee-950 dark:text-coffee-50"
                   placeholder="How can I help you?"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest opacity-60">Message</label>
+                <label className="text-xs font-bold uppercase tracking-widest text-zinc-500 dark:text-coffee-300">Message</label>
                 <textarea
                   rows={6}
-                  className="w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent focus:ring-2 focus:ring-coffee-800 outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-zinc-200 dark:border-coffee-800 bg-transparent focus:ring-2 focus:ring-coffee-800 outline-none transition-all resize-none text-coffee-950 dark:text-coffee-50"
                   placeholder="Your message here..."
                 />
               </div>
 
-              <button className="w-full py-4 bg-coffee-800 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-coffee-900 transition-colors">
+              <button className="w-full py-4 gradient-button rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">
                 Send Message <Send size={18} />
               </button>
             </form>

@@ -28,7 +28,7 @@ export function Experience() {
         
         <div className="relative space-y-12">
           {/* Vertical Line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-zinc-200 dark:bg-zinc-800 -translate-x-1/2 hidden md:block" />
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-coffee-200 dark:bg-coffee-800 -translate-x-1/2 hidden md:block" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -43,7 +43,7 @@ export function Experience() {
               )}
             >
               {/* Dot */}
-              <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-coffee-800 border-4 border-white dark:border-zinc-950 -translate-x-1/2 z-10 hidden md:block" />
+              <div className="absolute left-0 md:left-1/2 w-4 h-4 rounded-full bg-coffee-800 border-4 border-white dark:border-coffee-950 -translate-x-1/2 z-10 hidden md:block" />
 
               <div className="w-full md:w-1/2 glass-card p-8 hover:border-coffee-800 transition-colors">
                 <div className="flex items-center justify-between mb-4">
@@ -57,7 +57,7 @@ export function Experience() {
                 </div>
                 
                 <h3 className="text-xl font-bold mb-2">{exp.title}</h3>
-                <div className="flex items-center gap-4 text-sm text-zinc-500 mb-4">
+                <div className="flex items-center gap-4 text-sm text-coffee-500 dark:text-coffee-400 mb-4">
                   <div className="flex items-center gap-1">
                     <Briefcase size={14} />
                     {exp.company}
@@ -68,7 +68,7 @@ export function Experience() {
                   </div>
                 </div>
                 
-                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                <p className="text-coffee-700 dark:text-coffee-200 leading-relaxed">
                   {exp.description}
                 </p>
               </div>

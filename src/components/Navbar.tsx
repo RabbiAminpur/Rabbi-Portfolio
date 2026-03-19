@@ -27,13 +27,13 @@ export function Navbar() {
       animate={{ y: 0 }}
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        isScrolled ? "bg-white/80 dark:bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-200 dark:border-zinc-800" : "bg-transparent"
+        isScrolled ? "bg-white/80 dark:bg-coffee-950/80 backdrop-blur-lg border-b border-coffee-100 dark:border-coffee-800" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 font-bold text-xl tracking-tighter">
-          <Coffee className="text-coffee-800" />
-          <span>Rabbi.</span>
+        <a href="#" className="flex items-center gap-2 font-bold text-2xl tracking-tighter group">
+          <Coffee className="text-coffee-800 group-hover:rotate-12 transition-transform" />
+          <span className="gradient-text">Rabbi.</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -41,7 +41,7 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-coffee-800 dark:hover:text-coffee-400 transition-colors"
+              className="text-sm font-bold text-coffee-700 dark:text-coffee-200 hover:text-coffee-800 dark:hover:text-coffee-400 transition-colors uppercase tracking-widest"
             >
               {link.name}
             </a>
@@ -51,14 +51,14 @@ export function Navbar() {
         <div className="flex items-center gap-4">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+            className="p-2 rounded-full hover:bg-coffee-50 dark:hover:bg-coffee-900 transition-colors"
             aria-label="Toggle theme"
           >
             {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
           </button>
           <a
             href="#contact"
-            className="hidden sm:block px-5 py-2 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+            className="hidden sm:block px-5 py-2 bg-coffee-950 dark:bg-coffee-50 text-white dark:text-coffee-950 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
           >
             Hire Me
           </a>
